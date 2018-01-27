@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: d4422e5a616e83b4b816cb5c84728019
+timeCreated: 1517018604
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AT_TruckAmericanA
+    100002: group
+    100004: pasted__AT_TruckAmericanA
+    100006: pasted__TireBLX
+    100008: pasted__TireBLY
+    100010: pasted__TireBRX
+    100012: pasted__TireBRY
+    100014: pasted__TireFL
+    100016: pasted__TireFR
+    100018: polySurface1
+    100020: polySurface2
+    100022: transform1
+    100024: //RootNode
+    400000: AT_TruckAmericanA
+    400002: group
+    400004: pasted__AT_TruckAmericanA
+    400006: pasted__TireBLX
+    400008: pasted__TireBLY
+    400010: pasted__TireBRX
+    400012: pasted__TireBRY
+    400014: pasted__TireFL
+    400016: pasted__TireFR
+    400018: polySurface1
+    400020: polySurface2
+    400022: transform1
+    400024: //RootNode
+    2100000: AtlasA1
+    2100002: pasted__AtlasA1
+    2300000: pasted__TireBLX
+    2300002: pasted__TireBLY
+    2300004: pasted__TireBRX
+    2300006: pasted__TireBRY
+    2300008: pasted__TireFL
+    2300010: pasted__TireFR
+    2300012: polySurface1
+    2300014: polySurface2
+    3300000: pasted__TireBLX
+    3300002: pasted__TireBLY
+    3300004: pasted__TireBRX
+    3300006: pasted__TireBRY
+    3300008: pasted__TireFL
+    3300010: pasted__TireFR
+    3300012: polySurface1
+    3300014: polySurface2
+    4300000: polySurface1
+    4300002: polySurface2
+    4300004: pasted__TireBLX
+    4300006: pasted__TireBLY
+    4300008: pasted__TireBRY
+    4300010: pasted__TireBRX
+    4300012: pasted__TireFR
+    4300014: pasted__TireFL
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
