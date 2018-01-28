@@ -15,10 +15,10 @@ public class MenuManager : MonoBehaviour {
 	private bool pickMap= false, canSwitch = true;
 	// Use this for initialization
 	void Start () {
-		playerCars.Add ("P1", "-");
-		playerCars.Add ("P2", "-");
-		playerCars.Add ("P3", "-");
-		playerCars.Add ("P4", "-");
+		playerCars.Add ("P1", "");
+		playerCars.Add ("P2", "");
+		playerCars.Add ("P3", "");
+		playerCars.Add ("P4", "");
 
 		numPlayers.SetActive (false);
 		menuButtons.SetActive (true);

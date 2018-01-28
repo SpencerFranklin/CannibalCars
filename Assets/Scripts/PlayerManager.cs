@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour {
 
 	void Awake() {
 		ins = this;
+		//playerCars.Add ("P1", "Dee");
 		playerCars = GlobalControl.ins.playerCars;
 		/*foreach (KeyCode k in GlobalControl.ins.playerCars) {
 			playerCars.Add (k, GlobalControl.ins.playerCars [k]);

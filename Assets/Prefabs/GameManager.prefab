@@ -9,17 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1743914704283344}
+  m_RootGameObject: {fileID: 1301597711260690}
   m_IsPrefabParent: 1
---- !u!1 &1743914704283344
+--- !u!1 &1301597711260690
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4016919682248350}
-  - component: {fileID: 114420775500126624}
+  - component: {fileID: 4346497584011014}
+  - component: {fileID: 114006258693017732}
+  - component: {fileID: 114356659666302166}
+  - component: {fileID: 114678630384266404}
+  - component: {fileID: 114630766407741202}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -27,12 +30,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4016919682248350
+--- !u!4 &4346497584011014
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1743914704283344}
+  m_GameObject: {fileID: 1301597711260690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2477751, y: 23.42162, z: -55.823795}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,22 +43,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114420775500126624
+--- !u!114 &114006258693017732
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1743914704283344}
+  m_GameObject: {fileID: 1301597711260690}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57b9654be868b304e944624e4ee75795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numPlayers: 2
-  playerCars:
-  - MuscleCar
-  - BigRig
+  numPlayers: 0
+  maxPlayerHealth: 100
+  respawnDelay: 5
   playersInScene: []
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  explosion: {fileID: 100010, guid: 103b76a35e0a96848b4ce14d94f582b1, type: 2}
+--- !u!114 &114356659666302166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301597711260690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080e1e7341836954e879c04dbc9a9c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDrops: 10
+  spawnDelay: 3
+  floorPieces: []
+  numOnMap: 0
+--- !u!114 &114630766407741202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301597711260690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967badc7ba04b5649a9885deb05d937b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundDuration: 210
+  gameOver: 0
+--- !u!114 &114678630384266404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301597711260690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00af15d042fb1f34d8ada5c8f2873e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPlayers: 0

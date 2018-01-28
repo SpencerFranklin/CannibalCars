@@ -11,8 +11,8 @@ public class PickupManager : MonoBehaviour {
 	public Transform[] floorPieces;
 	public int numOnMap = 0;
 	private float timer = -5f;
-	private GameObject rocketPickup, plowPickup, dynamitePickup, shieldPickup, healthPickup;
-	private GameObject[] pickups = new GameObject[5];
+	private GameObject rocketPickup, plowPickup, dynamitePickup, shieldPickup, healthPickup, spikePickup;
+	private GameObject[] pickups = new GameObject[6];
 
 	// Use this for initialization
 	void Awake () {
@@ -23,11 +23,13 @@ public class PickupManager : MonoBehaviour {
 		dynamitePickup = Resources.Load ("DynamitePickup") as GameObject;
 		shieldPickup = Resources.Load ("ShieldPickup") as GameObject;
 		healthPickup = Resources.Load ("HealthPickup") as GameObject;
+		spikePickup = Resources.Load ("SpikePickup") as GameObject;
 		pickups[0] = rocketPickup;
 		pickups [1] = plowPickup;
 		pickups [2] = dynamitePickup;
 		pickups [3] = shieldPickup;
 		pickups [4] = healthPickup;
+		pickups [5] = spikePickup;
 		floorPieces = GameObject.Find ("Environment").transform.Find ("Floor").GetComponentsInChildren<Transform> ();
 		int i = 1;
 		while (numOnMap < maxDrops) {
@@ -42,8 +44,8 @@ public class PickupManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (numOnMap < maxDrops) {
+	void FixedUpdate () {
+		if (!GameManager.ins.gameOver && numOnMap < maxDrops) {
 			timer += Time.deltaTime;
 			if (timer >= spawnDelay) {
 				for (int i = 1; i < floorPieces.Length; i++) {
@@ -55,15 +57,16 @@ public class PickupManager : MonoBehaviour {
 				}
 				timer = 0f;
 			}
+
 		}
 	}
 
 	//False if it finds a player near
 	public bool CheckForPlayer(Transform t) {
 		RaycastHit hit;
-		Vector3 p1 = t.position;
+		Vector3 p1 = new Vector3(t.position.x, t.position.y + 1f, t.position.z);
 
-		Collider[] hitColliders = Physics.OverlapSphere (p1, 5f);
+		Collider[] hitColliders = Physics.OverlapSphere (p1, 7f);
 		int i = 1;
 		while (i < hitColliders.Length) {
 			if (hitColliders [i].gameObject.CompareTag ("Player") || hitColliders [i].gameObject.CompareTag ("Item")) {
@@ -75,16 +78,18 @@ public class PickupManager : MonoBehaviour {
 	}
 
 	private void ChooseItem(float c,  int i) {
-		if (c <= .1f) {
+		if (c <= .075f) {
 				Instantiate (rocketPickup, floorPieces [i].position, Quaternion.identity);
-		} else if (c <= .25f) {
+		} else if (c <= .15f) {
 				Instantiate (shieldPickup, floorPieces [i].position, Quaternion.identity);
-		} else if (c <= .45f) {
+		} else if (c <= .3f) {
 				Instantiate (plowPickup, floorPieces [i].position, Quaternion.identity);
-		} else if (c <= .7f) {
+		} else if (c <= .48f) {
 				Instantiate (healthPickup, floorPieces [i].position, Quaternion.identity);
+		} else if (c <= .74f) {
+			Instantiate (spikePickup, floorPieces [i].position, Quaternion.identity);
 		} else if (c <= 1f) {
-				Instantiate (dynamitePickup, floorPieces [i].position, Quaternion.identity);
+			Instantiate (dynamitePickup, floorPieces [i].position, Quaternion.identity);
 		}
 		numOnMap++;
 	}

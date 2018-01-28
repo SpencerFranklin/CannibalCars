@@ -6,10 +6,10 @@ public class CarInteractionManager : MonoBehaviour {
 
 	//public bool rocket,plow,hammer = false;
 	public bool upright = true;
-	private GameObject rocketPrefab, plowPrefab, dynamitePrefab, shieldFPrefab, shieldTPrefab;
+	private GameObject rocketPrefab, plowPrefab, dynamitePrefab, shieldFPrefab, shieldTPrefab, spikePrefab;
 	private Hashtable weapons = new Hashtable();
 	private Vector3 floorPos;
-	public float TossSpeed = 10f;
+	public float TossSpeed = 10f, shieldCooldown = 15f, spikeCooldown = 10f;
 	// Use this for initialization
 
 	void Awake() {
@@ -18,7 +18,7 @@ public class CarInteractionManager : MonoBehaviour {
 		weapons.Add ("Hammer", false);
 		weapons.Add ("Dynamite", false);
 		weapons.Add ("Shield", false);
-
+		weapons.Add ("Spike", false);
 	}
 
 	void Start () {
@@ -27,7 +27,7 @@ public class CarInteractionManager : MonoBehaviour {
 		dynamitePrefab = Resources.Load ("Dynamite") as GameObject;
 		shieldFPrefab = Resources.Load ("ShieldF") as GameObject;
 		shieldTPrefab = Resources.Load ("ShieldT") as GameObject;
-
+		spikePrefab = Resources.Load ("Spike") as GameObject;
 
 
 	}
@@ -54,6 +54,7 @@ public class CarInteractionManager : MonoBehaviour {
 		weapons["Hammer"] = false;
 		weapons["Dynamite"] = false;
 		weapons["Shield"] = false;
+		weapons["Spike"] = false;
 	}
 
 	void OnTriggerEnter(Collider col){
@@ -75,36 +76,37 @@ public class CarInteractionManager : MonoBehaviour {
 			}
 
 			//determine what to do with pickup item based on name (or tag?)
-			switch (name) {
-			case "PlowPickup(Clone)":
-				if (nopick)
+			if (!nopick) {
+				switch (name) {
+				case "PlowPickup(Clone)":
+					Destroy (col.gameObject);
+					PickupManager.ins.numOnMap--;
+					AddPlow ();
 					break;
-				Destroy (col.gameObject);
-				PickupManager.ins.numOnMap--;
-				AddPlow ();
-				break;
-			case "ShieldPickup(Clone)":
-				if (nopick)
+				case "ShieldPickup(Clone)":
+					Destroy (col.gameObject);
+					PickupManager.ins.numOnMap--;
+					AddShield ();
 					break;
-				Destroy (col.gameObject);
-				PickupManager.ins.numOnMap--;
-				AddShield ();
-				break;
-			case "RocketPickup(Clone)":
-				if (nopick)
+				case "RocketPickup(Clone)":
+					Destroy (col.gameObject);
+					PickupManager.ins.numOnMap--;
+					AddRocket ();
 					break;
-				Destroy (col.gameObject);
-				PickupManager.ins.numOnMap--;
-				AddRocket ();
-				break;
-			case "DynamitePickup(Clone)":
-				if (nopick)
+				case "DynamitePickup(Clone)":
+					Destroy (col.gameObject);
+					PickupManager.ins.numOnMap--;
+					AddDynamite ();
 					break;
-				Destroy (col.gameObject);
-				PickupManager.ins.numOnMap--;
-				AddDynamite ();
-				break;
-			case "HealthPickup(Clone)":
+				case "SpikePickup(Clone)":
+					Destroy (col.gameObject);
+					PickupManager.ins.numOnMap--;
+					AddSpike ();
+					break;
+				default:
+					break;
+				}
+			} else if (name.Equals("HealthPickup(Clone)")) {
 				if (this.GetComponent<PlayerHealth> ().curHealth < 100) {
 					Destroy (col.gameObject);
 					if (this.GetComponent<PlayerHealth> ().curHealth + 10 > 100) {
@@ -115,9 +117,6 @@ public class CarInteractionManager : MonoBehaviour {
 					}
 					PickupManager.ins.numOnMap--;
 				}
-				break;
-			default:
-				break;
 			}
 		} else if (col.name == "Transmission(Clone)") {
 			Destroy (col.gameObject);
@@ -149,12 +148,24 @@ public class CarInteractionManager : MonoBehaviour {
 		StartCoroutine (ShieldTimer (shf, sht));
 	}
 
+	void AddSpike() {
+		weapons ["Spike"] = true;
+		GameObject spk = Instantiate (spikePrefab, this.transform.Find("AttachMiddle").position, transform.rotation);
+		spk.transform.SetParent (this.transform.Find ("AttachMiddle"));
+		StartCoroutine (SpikeTimer (spk));
+	}
+
 	public IEnumerator ShieldTimer (GameObject sF, GameObject sT){
-		yield return new WaitForSeconds(15f);
+		yield return new WaitForSeconds(shieldCooldown);
 		Destroy (sF);
 		Destroy (sT);
 		this.GetComponent<PlayerHealth> ().armoured = false;
 		weapons["Shield"] = false;
+	}
+	public IEnumerator SpikeTimer (GameObject spk){
+		yield return new WaitForSeconds(spikeCooldown);
+		Destroy (spk);
+		weapons["Spike"] = false;
 	}
 
 	public IEnumerator SmallDelay (){

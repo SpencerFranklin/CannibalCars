@@ -7349,6 +7349,20 @@ Prefab:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 100010, guid: 103b76a35e0a96848b4ce14d94f582b1, type: 2}
+    - target: {fileID: 4346497584011014, guid: 0231a366cfadf0349a107728ff5ca142, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114356659666302166, guid: 0231a366cfadf0349a107728ff5ca142,
+        type: 2}
+      propertyPath: maxDrops
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114356659666302166, guid: 0231a366cfadf0349a107728ff5ca142,
+        type: 2}
+      propertyPath: spawnDelay
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0231a366cfadf0349a107728ff5ca142, type: 2}
   m_IsPrefabParent: 0
