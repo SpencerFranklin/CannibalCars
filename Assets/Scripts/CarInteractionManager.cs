@@ -113,7 +113,7 @@ public class CarInteractionManager : MonoBehaviour {
 
 						this.GetComponent<PlayerHealth> ().curHealth += 10;
 					}
-
+					PickupManager.ins.numOnMap--;
 				}
 				break;
 			default:

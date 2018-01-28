@@ -31,8 +31,10 @@ public class PickupManager : MonoBehaviour {
 		floorPieces = GameObject.Find ("Environment").transform.Find ("Floor").GetComponentsInChildren<Transform> ();
 		int i = 1;
 		while (numOnMap < maxDrops) {
-			float f = Random.Range (0f, 1f);
-			ChooseItem (f, i);
+			if (!CheckForPlayer (floorPieces [i])) {
+				float f = Random.Range (0f, 1f);
+				ChooseItem (f, i);
+			}
 			i++;
 			if (i == floorPieces.Length)
 				i = 1;
@@ -45,8 +47,11 @@ public class PickupManager : MonoBehaviour {
 			timer += Time.deltaTime;
 			if (timer >= spawnDelay) {
 				for (int i = 1; i < floorPieces.Length; i++) {
-					float f = Random.Range (0f, 1f);
-					ChooseItem (f, i);
+					if (!CheckForPlayer (floorPieces [i])) {
+						float f = Random.Range (0f, 1f);
+						ChooseItem (f, i);
+						break;
+					}
 				}
 				timer = 0f;
 			}
@@ -71,35 +76,16 @@ public class PickupManager : MonoBehaviour {
 
 	private void ChooseItem(float c,  int i) {
 		if (c <= .1f) {
-			//c = Random.Range (0, pickups.Length);
-			if (!CheckForPlayer (floorPieces [i])) {
 				Instantiate (rocketPickup, floorPieces [i].position, Quaternion.identity);
-				numOnMap++;
-			}
 		} else if (c <= .25f) {
-			//c = Random.Range (0, pickups.Length);
-			if (!CheckForPlayer (floorPieces [i])) {
 				Instantiate (shieldPickup, floorPieces [i].position, Quaternion.identity);
-				numOnMap++;
-			}
 		} else if (c <= .45f) {
-			//c = Random.Range (0, pickups.Length);
-			if (!CheckForPlayer (floorPieces [i])) {
 				Instantiate (plowPickup, floorPieces [i].position, Quaternion.identity);
-				numOnMap++;
-			}
 		} else if (c <= .7f) {
-			//c = Random.Range (0, pickups.Length);
-			if (!CheckForPlayer (floorPieces [i])) {
 				Instantiate (healthPickup, floorPieces [i].position, Quaternion.identity);
-				numOnMap++;
-			}
 		} else if (c <= 1f) {
-			//c = Random.Range (0, pickups.Length);
-			if (!CheckForPlayer (floorPieces [i])) {
 				Instantiate (dynamitePickup, floorPieces [i].position, Quaternion.identity);
-				numOnMap++;
-			}
 		}
+		numOnMap++;
 	}
 }
