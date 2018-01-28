@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 90304dee4ac524049863b9dd2a9543cb
+timeCreated: 1517113271
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AT_TruckAmericanA
+    100002: bottom
+    100004: Camera
+    100006: Camera.001
+    100008: Camera.002
+    100010: group
+    100012: group1
+    100014: group2
+    100016: group3
+    100018: group4
+    100020: group5
+    100022: group6
+    100024: group7
+    100026: group8
+    100028: group9
+    100030: //RootNode
+    100032: Lamp
+    100034: Lamp.001
+    100036: Lamp.002
+    100038: pasted__AT_TruckAmericanA
+    100040: pasted__group2
+    100042: pasted__group3
+    100044: pasted__group3.001
+    100046: pasted__group3.002
+    100048: pasted__group3.003
+    100050: pasted__group4
+    100052: pasted__group8
+    100054: pasted__pasted__group2
+    100056: pasted__pasted__group2.001
+    100058: pasted__pasted__group2.002
+    100060: pasted__pasted__group2.003
+    100062: pasted__pasted__group3
+    100064: pasted__pasted__group3.001
+    100066: pasted__pasted__pasted__group2
+    100068: pasted__pasted__pasted__group2.001
+    100070: pasted__pasted__pasted__pCube3
+    100072: pasted__pasted__persp1
+    100074: pasted__persp1
+    100076: pasted__persp1.001
+    100078: persp1
+    100080: transform1
+    400000: AT_TruckAmericanA
+    400002: bottom
+    400004: Camera
+    400006: Camera.001
+    400008: Camera.002
+    400010: group
+    400012: group1
+    400014: group2
+    400016: group3
+    400018: group4
+    400020: group5
+    400022: group6
+    400024: group7
+    400026: group8
+    400028: group9
+    400030: //RootNode
+    400032: Lamp
+    400034: Lamp.001
+    400036: Lamp.002
+    400038: pasted__AT_TruckAmericanA
+    400040: pasted__group2
+    400042: pasted__group3
+    400044: pasted__group3.001
+    400046: pasted__group3.002
+    400048: pasted__group3.003
+    400050: pasted__group4
+    400052: pasted__group8
+    400054: pasted__pasted__group2
+    400056: pasted__pasted__group2.001
+    400058: pasted__pasted__group2.002
+    400060: pasted__pasted__group2.003
+    400062: pasted__pasted__group3
+    400064: pasted__pasted__group3.001
+    400066: pasted__pasted__pasted__group2
+    400068: pasted__pasted__pasted__group2.001
+    400070: pasted__pasted__pasted__pCube3
+    400072: pasted__pasted__persp1
+    400074: pasted__persp1
+    400076: pasted__persp1.001
+    400078: persp1
+    400080: transform1
+    2000000: bottom
+    2000002: Camera
+    2000004: Camera.001
+    2000006: Camera.002
+    2000008: pasted__pasted__persp1
+    2000010: pasted__persp1
+    2000012: pasted__persp1.001
+    2000014: persp1
+    2100000: lambert1
+    2300000: pasted__pasted__pasted__pCube3
+    3300000: pasted__pasted__pasted__pCube3
+    4300000: pasted__pasted__pasted__pCube3
+    10800000: Lamp
+    10800002: Lamp.001
+    10800004: Lamp.002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,120 @@
+fileFormatVersion: 2
+guid: 58d7270ebffc6994a9da845474a6db81
+timeCreated: 1517076556
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bottom
+    100002: CannibalCar_V01:bottom
+    100004: CannibalCar_V01:persp1
+    100006: CannibalCar_V01:persp2
+    100008: CannibalCar_V02:bottom
+    100010: CannibalCar_V02:persp1
+    100012: //RootNode
+    100014: pCube1
+    100016: persp1
+    100018: persp2
+    400000: bottom
+    400002: CannibalCar_V01:bottom
+    400004: CannibalCar_V01:persp1
+    400006: CannibalCar_V01:persp2
+    400008: CannibalCar_V02:bottom
+    400010: CannibalCar_V02:persp1
+    400012: //RootNode
+    400014: pCube1
+    400016: persp1
+    400018: persp2
+    2000000: bottom
+    2000002: CannibalCar_V01:bottom
+    2000004: CannibalCar_V01:persp1
+    2000006: CannibalCar_V01:persp2
+    2000008: CannibalCar_V02:bottom
+    2000010: CannibalCar_V02:persp1
+    2000012: persp1
+    2000014: persp2
+    2100000: lambert1
+    2300000: pCube1
+    3300000: pCube1
+    4300000: pCube1
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

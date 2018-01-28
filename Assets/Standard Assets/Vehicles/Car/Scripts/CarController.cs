@@ -56,7 +56,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float AccelInput { get; private set; }
 
         // Use this for initialization
-        private void Start()
+        private void Awake()
         {
             m_WheelMeshLocalRotations = new Quaternion[4];
             for (int i = 0; i < 4; i++)
@@ -133,7 +133,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 Quaternion quat;
                 Vector3 position;
                 m_WheelColliders[i].GetWorldPose(out position, out quat);
-                m_WheelMeshes[i].transform.position = position;
+                //m_WheelMeshes[i].transform.position = position;
                 m_WheelMeshes[i].transform.rotation = quat;
             }
 
@@ -160,7 +160,11 @@ namespace UnityStandardAssets.Vehicles.Car
                 var hbTorque = handbrake*m_MaxHandbrakeTorque;
                 m_WheelColliders[2].brakeTorque = hbTorque;
                 m_WheelColliders[3].brakeTorque = hbTorque;
-            }
+			} else 
+			{
+				m_WheelColliders[2].brakeTorque = 0;
+				m_WheelColliders[3].brakeTorque = 0;
+			}
 
 
             CalculateRevs();
@@ -203,7 +207,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     thrustTorque = accel * (m_CurrentTorque / 4f);
                     for (int i = 0; i < 4; i++)
                     {
-                        m_WheelColliders[i].motorTorque = thrustTorque;
+                        m_WheelColliders[i].motorTorque = thrustTorque * 10;
                     }
                     break;
 
@@ -221,14 +225,14 @@ namespace UnityStandardAssets.Vehicles.Car
 
             for (int i = 0; i < 4; i++)
             {
-                if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)
+                /*if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)
                 {
                     m_WheelColliders[i].brakeTorque = m_BrakeTorque*footbrake;
                 }
-                else if (footbrake > 0)
+                else*/ if (footbrake > 0)
                 {
                     m_WheelColliders[i].brakeTorque = 0f;
-                    m_WheelColliders[i].motorTorque = -m_ReverseTorque*footbrake;
+                    m_WheelColliders[i].motorTorque = -m_ReverseTorque*footbrake ;
                 }
             }
         }
@@ -258,7 +262,8 @@ namespace UnityStandardAssets.Vehicles.Car
         // this is used to add more grip in relation to speed
         private void AddDownForce()
         {
-            m_WheelColliders[0].attachedRigidbody.AddForce(-transform.up*m_Downforce*
+			if(this.transform.up.y > 0)
+            	m_WheelColliders[0].attachedRigidbody.AddForce(-transform.up*m_Downforce*
                                                          m_WheelColliders[0].attachedRigidbody.velocity.magnitude);
         }
 
